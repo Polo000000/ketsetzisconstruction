@@ -259,6 +259,12 @@
   .contact-info dl{display:grid; grid-template-columns:auto 1fr; gap:16px 24px; font-size:16px;}
   .contact-info dt{color:var(--steel); font-size:13px; letter-spacing:0.03em; text-transform:uppercase; padding-top:2px;}
   .contact-info dd{font-weight:500;}
+  .contact-link, .tel-link{text-decoration:underline; text-underline-offset:3px;}
+  .contact-link:hover, .tel-link:hover{color:var(--orange);}
+  /* Desktop (mouse): phone numbers are plain text, not clickable */
+  @media (hover:hover) and (pointer:fine){
+    .tel-link{pointer-events:none; text-decoration:none; cursor:text; color:inherit;}
+  }
   .contact-cta{display:flex; gap:16px; margin-top:38px; flex-wrap:wrap;}
   .btn.solid.dark{background:var(--orange); border-color:var(--orange); color:var(--ink);}
   .btn.solid.dark:hover{background:#275F57;}
@@ -333,6 +339,28 @@
     .hero-stats .stat{flex:1 1 auto;}
   }
 </style>
+<!-- Structured Data (Schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ConstructionBusiness",
+  "name": "KETSETZIS Construction",
+  "url": "https://ketsetzisconstruction.gr/",
+  "telephone": "+306944554963",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Παρ. 1η Αίαντα 1",
+    "addressLocality": "Εύοσμος",
+    "postalCode": "56224",
+    "addressRegion": "Θεσσαλονίκη",
+    "addressCountry": "GR"
+  },
+  "hasMap": "https://maps.app.goo.gl/7heLFrZ6kBjEUj4k6",
+  "sameAs": [
+    "https://maps.app.goo.gl/7heLFrZ6kBjEUj4k6"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -547,9 +575,9 @@
     <div class="contact-single">
       <div class="contact-info">
         <dl>
-          <dt>Τηλέφωνα</dt><dd>2310 772 337 &nbsp;·&nbsp; 6944 554 963</dd>
-          <dt>Email</dt><dd>jketsl55@gmail.com</dd>
-          <dt>Διεύθυνση</dt><dd>Α' Πάροδος Αίαντα 1, Εύοσμος, Θεσσαλονίκη<br>(έναντι 25ης Μαρτίου 54)</dd>
+          <dt>Τηλέφωνα</dt><dd><a href="tel:+302310772337" class="tel-link">2310 772 337</a> &nbsp;·&nbsp; <a href="tel:+306944554963" class="tel-link">6944 554 963</a></dd>
+          <dt>Email</dt><dd><a href="mailto:jketsl55@gmail.com" class="contact-link">jketsl55@gmail.com</a></dd>
+          <dt>Διεύθυνση</dt><dd><a href="https://maps.app.goo.gl/7heLFrZ6kBjEUj4k6" target="_blank" rel="noopener noreferrer" class="contact-link">Α' Πάροδος Αίαντα 1, Εύοσμος 56224, Θεσσαλονίκη</a><br>(έναντι 25ης Μαρτίου 54)</dd>
           <dt>Instagram</dt><dd><a href="https://www.instagram.com/ketsetzisconstruction" target="_blank" rel="noopener" style="text-decoration:underline;">@ketsetzisconstruction</a></dd>
         </dl>
       </div>
